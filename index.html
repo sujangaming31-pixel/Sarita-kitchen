@@ -6,89 +6,138 @@
   <title>Sarita's Kitchen</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background-color: #1e1915; color: #fff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding-bottom: 40px; }
-    
-    /* Header & Hero Image */
-    .hero { position: relative; width: 100%; max-height: 250px; overflow: hidden; }
-    .hero img { width: 100%; height: 250px; object-fit: cover; filter: brightness(0.7); }
-    .hero-title { position: absolute; bottom: 15px; left: 20px; font-size: 2rem; font-weight: bold; color: #fff; text-shadow: 2px 2px 6px rgba(0,0,0,0.8); }
+    body { background-color: #1a1512; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; padding-bottom: 40px; }
 
     /* Main Container */
-    .container { max-width: 1000px; margin: 0 auto; padding: 0 15px; }
-    .section-title { color: #f5a623; margin: 25px 0 15px 0; font-size: 1.4rem; border-bottom: 2px solid #3d332b; padding-bottom: 6px; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 15px 20px; }
 
-    /* Dish Grid Layout */
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
-    .card { background: #2a231d; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; align-items: center; padding-bottom: 12px; border: 1px solid #3d332b; }
-    .card img { width: 100%; height: 140px; object-fit: cover; }
-    .card-title { font-size: 1rem; font-weight: bold; margin: 10px 0 4px 0; color: #fff; }
-    .card-price { color: #f5a623; font-size: 0.9rem; margin-bottom: 10px; font-weight: 600; }
+    /* Top Section: Brand Logo Left, Restaurant Photo Right */
+    .top-header { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; margin-bottom: 25px; background: #241d18; padding: 20px; border-radius: 12px; border: 1px solid #3d332b; }
+    
+    /* Brand Logo Box */
+    .brand-box { flex: 1; min-width: 260px; text-align: left; }
+    .brand-logo { display: inline-block; background: #f5a623; color: #1a1512; padding: 10px 18px; border-radius: 8px; font-weight: 900; font-size: 1.6rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+    .brand-address { color: #ccc; font-size: 0.95rem; line-height: 1.4; margin-top: 5px; }
+
+    /* Restaurant Photo */
+    .restaurant-photo { flex: 1; min-width: 280px; max-height: 220px; border-radius: 10px; overflow: hidden; border: 1px solid #3d332b; }
+    .restaurant-photo img { width: 100%; height: 100%; max-height: 220px; object-fit: cover; display: block; }
+
+    /* Delivery Quote & Banner */
+    .delivery-banner { background: linear-gradient(135deg, #f5a623, #e09419); color: #1a1512; padding: 18px 25px; border-radius: 10px; text-align: center; margin-bottom: 35px; box-shadow: 0 4px 15px rgba(245, 166, 35, 0.2); }
+    .delivery-banner h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; text-transform: uppercase; }
+    .delivery-banner p { font-size: 1rem; font-weight: 600; opacity: 0.9; }
+
+    /* Category Titles */
+    .section-title { color: #f5a623; margin: 30px 0 20px 0; font-size: 1.4rem; border-bottom: 2px solid #3d332b; padding-bottom: 8px; font-weight: 700; }
+
+    /* Food Grid Layout */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .card { background: #251e18; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; align-items: center; padding: 15px; border: 1px solid #3d332b; }
+    
+    /* Image Container (Full Image Display) */
+    .card-img-container { width: 100%; height: 200px; background: #14110e; border-radius: 8px; display: flex; align-items: center; justify-content: justify; overflow: hidden; margin-bottom: 12px; }
+    .card-img-container img { max-width: 100%; max-height: 100%; margin: 0 auto; object-fit: contain; }
+
+    .card-title { font-size: 1.15rem; font-weight: bold; margin-bottom: 6px; color: #fff; }
+    .card-price { color: #f5a623; font-size: 1rem; margin-bottom: 14px; font-weight: 700; }
     
     /* Order Button */
-    .order-btn { background-color: #f5a623; color: #1e1915; text-decoration: none; padding: 6px 16px; border-radius: 4px; font-weight: bold; font-size: 0.85rem; transition: 0.2s; }
+    .order-btn { background-color: #f5a623; color: #1a1512; text-decoration: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; font-size: 0.9rem; width: 100%; text-align: center; transition: 0.2s; }
     .order-btn:hover { background-color: #e09419; }
 
-    /* Footer / Contact Info */
-    footer { margin-top: 40px; background: #14110e; padding: 25px; border-radius: 8px; text-align: center; border: 1px solid #3d332b; }
-    footer h3 { color: #f5a623; margin-bottom: 10px; }
-    footer p { color: #ccc; margin: 5px 0; font-size: 0.95rem; }
-    footer a { color: #f5a623; text-decoration: none; }
+    /* Footer / Contact Details */
+    footer { margin-top: 50px; background: #14110e; padding: 30px 20px; border-radius: 10px; text-align: center; border: 1px solid #3d332b; }
+    footer h3 { color: #f5a623; margin-bottom: 12px; font-size: 1.3rem; }
+    footer p { color: #ccc; margin: 8px 0; font-size: 0.95rem; }
+    footer a { color: #f5a623; text-decoration: none; font-weight: bold; }
   </style>
 </head>
 <body>
 
-  <div class="hero">
-    <img src="pardis-restaurant-and-cafe-country-house-arc..." alt="Sarita's Kitchen Cafe">
-    <div class="hero-title">Sarita's Kitchen</div>
-  </div>
-
   <div class="container">
+    
+    <!-- Top Header: Logo Left, Photo Right -->
+    <div class="top-header">
+      <div class="brand-box">
+        <div class="brand-logo">Sarita's Kitchen</div>
+        <div class="brand-address">
+          📍 Main Market, City Center<br>
+          Authentic Taste & Fresh Ingredients Daily
+        </div>
+      </div>
+      <div class="restaurant-photo">
+        <img src="images (1).jpg" alt="Sarita's Kitchen Cafe" onerror="this.src='pardis-restaurant-and-cafe-country-house-arc...'">
+      </div>
+    </div>
+
+    <!-- Delivery Quote Banner -->
+    <div class="delivery-banner">
+      <h2>⚡ Express Home Delivery Available!</h2>
+      <p>Hot & Freshly Cooked Meals Delivered to Your Doorstep in 30–45 Minutes.</p>
+    </div>
+
+    <!-- Mo:Mo & Pizza Specials -->
     <div class="section-title">Mo:Mo & Pizza Specials</div>
     <div class="grid">
       <div class="card">
-        <img src="steam momo.jpg" alt="Steam Mo:Mo">
+        <div class="card-img-container">
+          <img src="steam momo.jpg" alt="Steam Mo:Mo">
+        </div>
         <div class="card-title">Steam Mo:Mo</div>
         <div class="card-price">Rs. 170 – 220</div>
         <a href="tel:9815352903" class="order-btn">Order Now</a>
       </div>
 
       <div class="card">
-        <img src="buff momo.jpg" alt="Buff Mo:Mo">
+        <div class="card-img-container">
+          <img src="buff momo.jpg" alt="Buff Mo:Mo">
+        </div>
         <div class="card-title">Buff Mo:Mo</div>
         <div class="card-price">Rs. 120 – 170</div>
         <a href="tel:9815352903" class="order-btn">Order Now</a>
       </div>
 
       <div class="card">
-        <img src="momo piza.jpg" alt="Momo Pizza">
+        <div class="card-img-container">
+          <img src="momo piza.jpg" alt="Momo Pizza">
+        </div>
         <div class="card-title">Momo Pizza</div>
         <div class="card-price">Rs. 250 – 350</div>
         <a href="tel:9815352903" class="order-btn">Order Now</a>
       </div>
     </div>
 
+    <!-- Cold Drinks -->
     <div class="section-title">Cold Drinks</div>
     <div class="grid">
       <div class="card">
-        <img src="fanta photo.jpg" alt="Fanta">
+        <div class="card-img-container">
+          <img src="fanta photo.jpg" alt="Fanta">
+        </div>
         <div class="card-title">Fanta</div>
         <div class="card-price">Rs. 60</div>
         <a href="tel:9815352903" class="order-btn">Order Now</a>
       </div>
 
       <div class="card">
-        <img src="sprite in glass.jpg" alt="Sprite">
+        <div class="card-img-container">
+          <img src="sprite in glass.jpg" alt="Sprite">
+        </div>
         <div class="card-title">Sprite</div>
         <div class="card-price">Rs. 60</div>
         <a href="tel:9815352903" class="order-btn">Order Now</a>
       </div>
     </div>
 
+    <!-- Footer / Contact Info -->
     <footer>
       <h3>Contact & Orders</h3>
       <p><strong>Phone:</strong> <a href="tel:9815352903">9815352903</a></p>
       <p><strong>Email:</strong> <a href="mailto:bhetwalsuzan@gmail.com">bhetwalsuzan@gmail.com</a></p>
+      <p><strong>Address:</strong> Sarita's Kitchen, Nepal</p>
     </footer>
+
   </div>
 
 </body>
