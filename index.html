@@ -20,10 +20,10 @@
     .brand-address { color: #ccc; font-size: 0.95rem; line-height: 1.4; margin-top: 5px; }
 
     /* Restaurant Photo */
-    .restaurant-photo { flex: 1; min-width: 280px; max-height: 220px; border-radius: 10px; overflow: hidden; border: 1px solid #3d332b; }
-    .restaurant-photo img { width: 100%; height: 100%; max-height: 220px; object-fit: cover; display: block; }
+    .restaurant-photo { flex: 1; min-width: 280px; height: 200px; border-radius: 10px; overflow: hidden; border: 1px solid #3d332b; background: #14110e; }
+    .restaurant-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    /* Delivery Quote & Banner */
+    /* Delivery Banner */
     .delivery-banner { background: linear-gradient(135deg, #f5a623, #e09419); color: #1a1512; padding: 18px 25px; border-radius: 10px; text-align: center; margin-bottom: 35px; box-shadow: 0 4px 15px rgba(245, 166, 35, 0.2); }
     .delivery-banner h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; text-transform: uppercase; }
     .delivery-banner p { font-size: 1rem; font-weight: 600; opacity: 0.9; }
@@ -35,9 +35,9 @@
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
     .card { background: #251e18; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; align-items: center; padding: 15px; border: 1px solid #3d332b; }
     
-    /* Image Container (Full Image Display) */
-    .card-img-container { width: 100%; height: 200px; background: #14110e; border-radius: 8px; display: flex; align-items: center; justify-content: justify; overflow: hidden; margin-bottom: 12px; }
-    .card-img-container img { max-width: 100%; max-height: 100%; margin: 0 auto; object-fit: contain; }
+    /* Image Container */
+    .card-img-container { width: 100%; height: 200px; background: #14110e; border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 12px; }
+    .card-img-container img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
     .card-title { font-size: 1.15rem; font-weight: bold; margin-bottom: 6px; color: #fff; }
     .card-price { color: #f5a623; font-size: 1rem; margin-bottom: 14px; font-weight: 700; }
@@ -57,7 +57,7 @@
 
   <div class="container">
     
-    <!-- Top Header: Logo Left, Photo Right -->
+    <!-- Top Header: Logo Left, Cafe Building Photo Right -->
     <div class="top-header">
       <div class="brand-box">
         <div class="brand-logo">Sarita's Kitchen</div>
@@ -67,11 +67,11 @@
         </div>
       </div>
       <div class="restaurant-photo">
-        <img src="images (1).jpg" alt="Sarita's Kitchen Cafe" onerror="this.src='pardis-restaurant-and-cafe-country-house-arc...'">
+        <img src="pardis-restaurant-and-cafe-country-house-architecture-design-form4-inc_1.jpg" alt="Sarita's Kitchen Cafe">
       </div>
     </div>
 
-    <!-- Delivery Quote Banner -->
+    <!-- Express Delivery Banner -->
     <div class="delivery-banner">
       <h2>⚡ Express Home Delivery Available!</h2>
       <p>Hot & Freshly Cooked Meals Delivered to Your Doorstep in 30–45 Minutes.</p>
