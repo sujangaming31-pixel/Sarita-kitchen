@@ -2,84 +2,93 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sujan's Kitchen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sarita's Kitchen</title>
   <style>
-    body { background-color: #1e1915; color: #fff; font-family: sans-serif; margin: 0; padding: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #1e1915; color: #fff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding-bottom: 40px; }
     
-    .hero { position: relative; width: 100%; height: 280px; }
-    .hero img { width: 100%; height: 100%; object-fit: cover; }
-    .hero-title {
-      position: absolute; bottom: 20px; left: 30px;
-      font-size: 2.2rem; font-weight: bold; color: #fff;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
-    }
+    /* Header & Hero Image */
+    .hero { position: relative; width: 100%; max-height: 250px; overflow: hidden; }
+    .hero img { width: 100%; height: 250px; object-fit: cover; filter: brightness(0.7); }
+    .hero-title { position: absolute; bottom: 15px; left: 20px; font-size: 2rem; font-weight: bold; color: #fff; text-shadow: 2px 2px 6px rgba(0,0,0,0.8); }
+
+    /* Main Container */
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 15px; }
+    .section-title { color: #f5a623; margin: 25px 0 15px 0; font-size: 1.4rem; border-bottom: 2px solid #3d332b; padding-bottom: 6px; }
+
+    /* Dish Grid Layout */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
+    .card { background: #2a231d; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; align-items: center; padding-bottom: 12px; border: 1px solid #3d332b; }
+    .card img { width: 100%; height: 140px; object-fit: cover; }
+    .card-title { font-size: 1rem; font-weight: bold; margin: 10px 0 4px 0; color: #fff; }
+    .card-price { color: #f5a623; font-size: 0.9rem; margin-bottom: 10px; font-weight: 600; }
     
-    .section-title {
-      color: #f5a623; margin: 30px 20px 10px 20px;
-      border-bottom: 2px solid #3d332b; padding-bottom: 8px;
-    }
-    
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px; padding: 20px;
-    }
-    .card {
-      background-color: #2a241f; border-radius: 10px;
-      overflow: hidden; border: 1px solid #3d332b;
-      text-align: center; padding-bottom: 12px;
-    }
-    .card img { width: 100%; height: 160px; object-fit: cover; }
-    .card h3 { margin: 10px 0 5px 0; font-size: 1rem; }
-    .price { color: #f5a623; font-weight: bold; font-size: 0.95rem; }
+    /* Order Button */
+    .order-btn { background-color: #f5a623; color: #1e1915; text-decoration: none; padding: 6px 16px; border-radius: 4px; font-weight: bold; font-size: 0.85rem; transition: 0.2s; }
+    .order-btn:hover { background-color: #e09419; }
+
+    /* Footer / Contact Info */
+    footer { margin-top: 40px; background: #14110e; padding: 25px; border-radius: 8px; text-align: center; border: 1px solid #3d332b; }
+    footer h3 { color: #f5a623; margin-bottom: 10px; }
+    footer p { color: #ccc; margin: 5px 0; font-size: 0.95rem; }
+    footer a { color: #f5a623; text-decoration: none; }
   </style>
 </head>
 <body>
 
-  <!-- Restaurant Photo -->
   <div class="hero">
-    <img src="pardis-restaurant-and-cafe-country-house-architecture_2.jpg" alt="Sujan's Kitchen">
-    <div class="hero-title">Sujan's Kitchen</div>
+    <img src="pardis-restaurant-and-cafe-country-house-arc..." alt="Sarita's Kitchen Cafe">
+    <div class="hero-title">Sarita's Kitchen</div>
   </div>
 
-  <!-- Mo:Mo & Specials -->
-  <h2 class="section-title">Mo:Mo & Pizza Specials</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="steam momo.jpg" alt="Steam Mo:Mo">
-      <h3>Steam Mo:Mo</h3>
-      <div class="price">Rs. 170 – 220</div>
-    </div>
-    <div class="card">
-      <img src="buff momo.jpg" alt="Buff Mo:Mo">
-      <h3>Buff Mo:Mo</h3>
-      <div class="price">Rs. 120 – 170</div>
-    </div>
-    <div class="card">
-      <img src="momo piza.jpg" alt="Momo Pizza">
-      <h3>Momo Pizza</h3>
-      <div class="price">Rs. 250 – 350</div>
-    </div>
-  </div>
+  <div class="container">
+    <div class="section-title">Mo:Mo & Pizza Specials</div>
+    <div class="grid">
+      <div class="card">
+        <img src="steam momo.jpg" alt="Steam Mo:Mo">
+        <div class="card-title">Steam Mo:Mo</div>
+        <div class="card-price">Rs. 170 – 220</div>
+        <a href="tel:9815352903" class="order-btn">Order Now</a>
+      </div>
 
-  <!-- Beverages -->
-  <h2 class="section-title">Cold Drinks</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="sprite in glass.jpg" alt="Sprite in Glass">
-      <h3>Sprite</h3>
-      <div class="price">Rs. 60 – 100</div>
+      <div class="card">
+        <img src="buff momo.jpg" alt="Buff Mo:Mo">
+        <div class="card-title">Buff Mo:Mo</div>
+        <div class="card-price">Rs. 120 – 170</div>
+        <a href="tel:9815352903" class="order-btn">Order Now</a>
+      </div>
+
+      <div class="card">
+        <img src="momo piza.jpg" alt="Momo Pizza">
+        <div class="card-title">Momo Pizza</div>
+        <div class="card-price">Rs. 250 – 350</div>
+        <a href="tel:9815352903" class="order-btn">Order Now</a>
+      </div>
     </div>
-    <div class="card">
-      <img src="fanta photo.jpg" alt="Fanta">
-      <h3>Fanta</h3>
-      <div class="price">Rs. 60 – 100</div>
+
+    <div class="section-title">Cold Drinks</div>
+    <div class="grid">
+      <div class="card">
+        <img src="fanta photo.jpg" alt="Fanta">
+        <div class="card-title">Fanta</div>
+        <div class="card-price">Rs. 60</div>
+        <a href="tel:9815352903" class="order-btn">Order Now</a>
+      </div>
+
+      <div class="card">
+        <img src="sprite in glass.jpg" alt="Sprite">
+        <div class="card-title">Sprite</div>
+        <div class="card-price">Rs. 60</div>
+        <a href="tel:9815352903" class="order-btn">Order Now</a>
+      </div>
     </div>
-    <div class="card">
-      <img src="images (1).jpg" alt="Cold Drink">
-      <h3>Cold Beverage</h3>
-      <div class="price">Rs. 60 – 100</div>
-    </div>
+
+    <footer>
+      <h3>Contact & Orders</h3>
+      <p><strong>Phone:</strong> <a href="tel:9815352903">9815352903</a></p>
+      <p><strong>Email:</strong> <a href="mailto:bhetwalsuzan@gmail.com">bhetwalsuzan@gmail.com</a></p>
+    </footer>
   </div>
 
 </body>
